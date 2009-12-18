@@ -3,3 +3,4 @@ log/*.log
 tmp/*.html
 public/system/*
 db/schema.rb
+bin/tmp/*
