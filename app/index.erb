@@ -1,9 +1,7 @@
-<div class="toolbar">
-	<h1 id="pageTitle">
-		Rutanet
-	</h1>
+<div>
+<% if SyncEngine::logged_in > 0 %>
+  <script language="JavaScript">window.location ='/app/Freight/index';</script>
+<% else %>
+  <script language="JavaScript">window.location ='/app/Settings/login';</script>
+<% end %>
 </div>
-
-<ul id="home" selected="true" title="Rutanetmobile">
-	<li><a href="Freight">Cargas</a></li>
-</ul>
