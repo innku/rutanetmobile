@@ -1,0 +1,3 @@
+[submodule "rhosync"]
+   path = rhosync
+   url = rhosync/.git

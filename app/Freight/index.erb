@@ -5,7 +5,6 @@
 </div>
 
 <ul id="freights" title="Freights" selected="true">
-  	<a class="button right_button" href="Freight/new" target="_self">New</a>
 	<%@freights.each do |freight|%>
 		<li><%=link_to "#{freight.origin} -> #{freight.destination}", :action => :show, :id => freight.object %></li>
 	<% end %>
