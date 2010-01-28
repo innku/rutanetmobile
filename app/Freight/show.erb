@@ -1,38 +1,41 @@
 <div class="toolbar">
-	<h1 id="pageTitle">
-		<%=@freight.origin%>
+	<h1 id="pageTitle" class='category_title'>
+		<%=@freight.category %>
 	</h1>
 </div>
 
 <div class="panel" selected="true">
 
-<a class="button right_button" href="<%=url_for(:action => :edit, :id => @freight.object)%>" target="_self">Edit</a>
-
 <table class="grid">
   
   <tr>
-	<td class="gridleft">Origin</td>
+	<td class="gridleft">Origen</td>
     <td class="gridright"><%=@freight.origin%></td>
   </tr>
   
   <tr>
-	<td class="gridleft">Destination</td>
+	<td class="gridleft">Destino</td>
     <td class="gridright"><%=@freight.destination%></td>
   </tr>
   
   <tr>
-	<td class="gridleft">Category</td>
+	<td class="gridleft">Categoria</td>
     <td class="gridright"><%=@freight.category%></td>
   </tr>
   
   <tr>
-	<td class="gridleft">Weight</td>
+	<td class="gridleft">Peso</td>
     <td class="gridright"><%=@freight.weight%></td>
   </tr>
 
   <tr>
-	<td class="gridleft">Weight</td>
-    <td class="gridright"><%=@freight.weight%></td>
+	<td class="gridleft">Fecha de salida</td>
+    <td class="gridright"><%= display_date(@freight.date_departure) %></td>
+  </tr>
+
+  <tr>
+	<td class="gridleft">Comentarios</td>
+    <td class="gridright"><%=@freight.comments %></td>
   </tr>
   
 </table>

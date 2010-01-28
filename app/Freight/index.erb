@@ -6,6 +6,8 @@
 
 <ul id="freights" title="Freights" selected="true">
 	<%@freights.each do |freight|%>
-		<li><%=link_to "#{freight.origin} -> #{freight.destination}", :action => :show, :id => freight.object %></li>
+		<li>
+			<%=link_to "<strong>#{freight.category}</strong> <br /> #{freight.origin} -> #{freight.destination}", :action => :show, :id => freight.object %>
+		</li>
 	<% end %>
 </ul>

@@ -1,6 +1,9 @@
 require 'rho/rhocontroller'
+require 'helpers/application_helper'
 
 class FreightController < Rho::RhoController
+
+  include ApplicationHelper
 
   #GET /Freight
   def index
