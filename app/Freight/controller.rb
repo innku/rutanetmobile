@@ -37,6 +37,7 @@ class FreightController < Rho::RhoController
   def create
     @freight = Freight.new(@params['freight'])
     @freight.save
+    render
     redirect :action => :index
   end
 

@@ -39,4 +39,10 @@
   </tr>
   
 </table>
+
+<form method="POST" action="<%= url_for(:controller => 'Contact', :action => 'create') %>">
+	<input type="hidden" name="contact[offer_id]"  value="<%= @freight.object %>" />
+	<input type="submit" value="Ver datos de contacto">
+</form>
+
 </div>

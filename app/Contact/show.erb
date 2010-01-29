@@ -1,0 +1,44 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		<%=@contact.name%>
+	</h1>
+</div>
+
+<div class="panel" selected="true">
+
+<a class="button right_button" href="<%=url_for(:action => :edit, :id => @contact.object)%>" target="_self">Edit</a>
+
+<table class="grid">
+  
+  <tr>
+	<td class="gridleft">Name</td>
+    <td class="gridright"><%=@contact.name%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Mail</td>
+    <td class="gridright"><%=@contact.mail%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Phone</td>
+    <td class="gridright"><%=@contact.phone%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Company</td>
+    <td class="gridright"><%=@contact.company%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Location</td>
+    <td class="gridright"><%=@contact.location%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Rating</td>
+    <td class="gridright"><%=@contact.rating%></td>
+  </tr>
+  
+</table>
+</div>
