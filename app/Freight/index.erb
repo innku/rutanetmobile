@@ -1,8 +1,11 @@
+<% unless SyncEngine::logged_in > 0 %>
+  <script language="JavaScript">window.location ='/app/Settings/login';</script>
+<% end %>
+
 <div class="toolbar">
 	<h1 id="pageTitle">
 		Cargas
 	</h1>
-	<%= link_to "Contactos", :controller => 'Contact', :action => 'index' %>
 </div>
 
 <ul id="freights" title="Freights" selected="true">

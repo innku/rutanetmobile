@@ -1,6 +1,10 @@
+<% unless SyncEngine::logged_in > 0 %>
+  <script language="JavaScript">window.location ='/app/Settings/login';</script>
+<% end %>
+
 <div class="toolbar">
 	<h1 id="pageTitle">
-		New Freight
+		Buscar Cargas
 	</h1>
 </div>
 
@@ -13,25 +17,22 @@
 		<input type="hidden" name="id" value="<%=@freight.object%>"/>
 		
 		  <div class="row">
-			  <label>Origin: </label>
+			  <label>Origen: </label>
 			  <input type="text" name="freight[origin]"/>
 		  </div>
 		
 		  <div class="row">
-			  <label>Destination: </label>
+			  <label>Destino: </label>
 			  <input type="text" name="freight[destination]"/>
 		  </div>
 		
-		  <div class="row">
-			  <label>Category: </label>
-			  <input type="text" name="freight[category]"/>
-		  </div>
-		
-		  <div class="row">
-			  <label>Weight: </label>
+		  <div class="row long">
+			  <label>Peso Minimo (Tn): </label>
 			  <input type="text" name="freight[weight]"/>
 		  </div>
 		
 	</fieldset>
-	<input type="submit" value="Create"/>
+	<div style="position: relative; height: 100px;">
+	  <input type="submit" value="Buscar Cargas" class="blueButton"/>
+	</div>
 </form>

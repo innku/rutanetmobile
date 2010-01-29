@@ -16,7 +16,7 @@ body > *:not(.toolbar) {
     margin: 0;
     padding: 0;
     left: 0;
-    top: 45px;
+    top: 44px;
     width: 100%;
     min-height: 372px;
 }
@@ -44,8 +44,8 @@ body > .toolbar {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     padding: 10px;
-    height: 45px;
-    background: url(/public/images/toolbar.png) #6d84a2 repeat-x;
+    height: 44px;
+    background: url(/public/images/blue_toolbar.png) #6d84a2 repeat-x;
 }
 
 .toolbar > h1 {
@@ -53,7 +53,7 @@ body > .toolbar {
     overflow: hidden;
     left: 50%;
     margin: 1px 0 0 -75px;
-    height: 45px;
+    height: 44px;
     font-size: 20px;
     width: 150px;
     font-weight: bold;
@@ -281,10 +281,15 @@ fieldset > .row:last-child {
     -webkit-box-sizing: border-box;
     margin: 0;
     border: none;
-    padding: 12px 10px 0 110px;
+    padding: 12px 10px 0 70px;
     height: 42px;
     background: none;
 }
+
+.long > input:not(input[type|=radio]):not(input[type|=checkbox]) {
+    padding: 12px 10px 0 130px;
+}
+
 .row > input[type|=radio], .row > input[type|=checkbox] {
   margin: 7px 7px 0 0;
   height: 25px;
@@ -345,14 +350,14 @@ fieldset > .row:last-child {
 
 /* change default graphic for toolbar */
 body > .toolbar {
-  background: url(/public/images/toolbar.png) #000000 repeat-x;
+  background: url(/public/images/blue_toolbar.png) #000000 repeat-x;
 }
 /* now that we don't use back-buttons, we disable ellipsis on long labels */
 .toolbar > h1.category_title {
   overflow: visible;
   text-align:left;
   font-size:16px;
-  left: 10px;
+  left: 75px;
   margin: 1px 0 0 0;
 }
 
@@ -424,4 +429,13 @@ table.grid tr:last-of-type td {
   white-space: nowrap;
   background: none;
   -webkit-border-image: url(/public/images/blue_button.png) 0 5 0 5;	
+}
+
+div#wait {
+	position: absolute;
+	top: 0;
+	background: url(/public/images/loading.png) no-repeat; 
+	width: 100%; 
+	height: 100%; 
+	text-align: center
 }
