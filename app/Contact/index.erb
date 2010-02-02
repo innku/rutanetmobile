@@ -1,3 +1,7 @@
+<% unless SyncEngine::logged_in > 0 %>
+  <script language="JavaScript">window.location ='/app/Settings/login';</script>
+<% end %>
+
 <div class="toolbar">
 	<h1 id="pageTitle">
 		Contacts
@@ -5,10 +9,7 @@
 </div>
 
 <ul id="contacts" title="Contacts" selected="true">
-  	<a class="button right_button" href="Contact/new" target="_self">New</a>
-	<%@contacts.each do |x|%>
-	
+	<% @contacts.each do |x| %>
 		<li><%=link_to "#{x.first_name} #{x.last_name}", :action => :show, :id => x.object%></li>
-	
-	<%end%>
+	<% end %>
 </ul>

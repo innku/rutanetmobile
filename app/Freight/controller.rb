@@ -35,10 +35,33 @@ class FreightController < Rho::RhoController
 
   # POST /Freight/create
   def create
-    @freight = Freight.new(@params['freight'])
-    @freight.save
-    render
-    redirect :action => :index
+
+  end
+  
+  def search
+    Freight.search(
+      :from => 'search',
+      :search_params => { :origin_name_like => @params['origin'], :destination_name_like => @params['destination'], :weight_greater_than => @params['weight'] },
+      :offset => 0,
+      :max_results => 50,
+      :callback => '/app/Freight/search_callback',
+      :callback_param => "" )
+      
+      render :action => :wait
+  end
+  
+  def search_callback
+    logger.debug "Entrando a search callback, status #{status.inspect}"
+    if (status && status == 'ok')
+      WebView.navigate ( url_for :action => :show_page )
+    end
+    #TODO: show error page if status == 'error'
+    render :action => :ok
+  end
+  
+  def show_page
+    @freights = Freight.find(:all)    
+    render :action => :show_page
   end
 
   # POST /Freight/{1}/update

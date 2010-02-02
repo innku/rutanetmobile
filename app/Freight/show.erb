@@ -2,6 +2,7 @@
 	<h1 id="pageTitle" class='category_title'>
 		<%=@freight.category %>
 	</h1>
+	<%= link_to "Cargas", {:controller => "Freight", :action => "index"}, "class=\"button leftButton\"" %>
 </div>
 
 <div class="panel" selected="true">
@@ -34,7 +35,7 @@
   </tr>
 
   <tr>
-	<td class="gridleft">Fecha de salida</td>
+	<td class="gridleft">Salida</td>
     <td class="gridright"><%= display_date(@freight.date_departure) %></td>
   </tr>
 
@@ -45,9 +46,9 @@
   
 </table>
 
-<form method="POST" action="<%= url_for(:controller => 'Contact', :action => 'create') %>">
-	<input type="hidden" name="contact[offer_id]"  value="<%= @freight.object %>" />
-	<input type="submit" value="Ver datos de contacto">
-</form>
-
+<div style="position: relative; height: 100px;">
+  <form method="POST" action="<%= url_for(:controller => 'Contact', :action => 'create') %>">
+  	<input type="hidden" name="contact[offer_id]"  value="<%= @freight.object %>" />
+  	<input type="submit" value="Ver datos de contacto" class="blueButton"/>
+  </form>
 </div>
