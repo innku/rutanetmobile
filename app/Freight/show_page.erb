@@ -1,0 +1,18 @@
+<% unless SyncEngine::logged_in > 0 %>
+  <script language="JavaScript">window.location ='/app/Settings/login';</script>
+<% end %>
+
+<div class="toolbar">
+	<h1 id="pageTitle">
+		Cargas Encontradas
+	</h1>
+</div>
+
+<ul id="freights" title="Freights" selected="true">
+	<%@freights.each do |freight|%>
+		<li>
+			<%=link_to "<span>#{freight.category}</span> <br/> #{freight.origin} <img src='/public/images/arrow.png'/> #{freight.destination}", :action => :show, :id => freight.object %>
+		</li>
+	<% end %>
+	<li class="last">&nbsp;</li>
+</ul>

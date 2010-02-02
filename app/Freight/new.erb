@@ -8,27 +8,24 @@
 	</h1>
 </div>
 
-<form title="New Freight" 
-	  class="panel"
-	  id="freight_new_form" 
-	  method="POST" 
+<form title="New Freight" class="panel" id="freight_new_form" method="POST" 
 	  action="<%=url_for(:action => :create)%>" selected="true">
 	<fieldset>
 		<input type="hidden" name="id" value="<%=@freight.object%>"/>
 		
 		  <div class="row">
 			  <label>Origen: </label>
-			  <input type="text" name="freight[origin]"/>
+			  <input type="text" name="origin"/>
 		  </div>
 		
 		  <div class="row">
 			  <label>Destino: </label>
-			  <input type="text" name="freight[destination]"/>
+			  <input type="text" name="destination"/>
 		  </div>
 		
 		  <div class="row long">
 			  <label>Peso Minimo (Tn): </label>
-			  <input type="text" name="freight[weight]"/>
+			  <input type="text" name="weight"/>
 		  </div>
 		
 	</fieldset>
