@@ -106,8 +106,11 @@ module ApplicationHelper
   end
   
   def display_date(date)
-    y,m,d = date.split('-')
-    "#{d}/#{m}/#{y}"
+    if date
+      y,m,d = date.split('-')
+      "#{d}/#{m}/#{y}"
+    end
+  
   end
   
 end

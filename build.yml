@@ -1,9 +1,9 @@
 --- 
 name: rutanetmobile
 bbver: 4.6
-sdk: /Users/fede/.rvm/gems/ruby/1.8.7/gems/rhodes-1.2.2
+sdk: /Users/fede/work/rhodes
 applog: rholog.txt
-version: 1.2.2
+version: 1.4.0
 vendor: rhomobile
 iphone: 
   sdk: iphonesimulator3.0

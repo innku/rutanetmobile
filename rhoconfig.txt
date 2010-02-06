@@ -20,3 +20,5 @@ LastVisitedPage = ''
 
 # Sync server url.  This must be the full path to your sources.  For example: http://rhomobile.rhohub.com/apps/SugarCRM/sources/
 syncserver = 'http://rhosync.local/apps/Rutanetmobile/sources'
+
+show_log

@@ -5,7 +5,6 @@ class FreightController < Rho::RhoController
 
   include ApplicationHelper
 
-  #GET /Freight
   def index
     @freights = Freight.find(:all)
         unless $sync_in_progress
@@ -15,25 +14,21 @@ class FreightController < Rho::RhoController
         render
   end
 
-  # GET /Freight/{1}
   def show
     @freight = Freight.find(@params['id'])
     render :action => :show
   end
 
-  # GET /Freight/new
   def new
     @freight = Freight.new
     render :action => :new
   end
 
-  # GET /Freight/{1}/edit
   def edit
     @freight = Freight.find(@params['id'])
     render :action => :edit
   end
 
-  # POST /Freight/create
   def create
 
   end
@@ -47,31 +42,36 @@ class FreightController < Rho::RhoController
       :callback => '/app/Freight/search_callback',
       :callback_param => "" )
       
-      render :action => :wait
+      render :action => 'wait'
+  end
+  
+  def wait
+    render :action => 'wait', :layout => :full
   end
   
   def search_callback
-    logger.debug "Entrando a search callback, status #{status.inspect}"
-    if (status && status == 'ok')
-      WebView.navigate ( url_for :action => :show_page )
+    status = @params['status']
+    if (status && status == 'ok' )
+      puts "Entrando al if"
+      WebView.navigate ( url_for :action => :show_page, :query => @params['search_params'] )
     end
-    #TODO: show error page if status == 'error'
-    render :action => :ok
+    ""
   end
   
   def show_page
-    @freights = Freight.find(:all)    
+    puts "Peso: #{@params['weight_greater_than']}"
+    @freights = Freight.find(:all, :conditions => ["origin LIKE ? AND destination LIKE ? AND CAST(weight AS INT) > ?", 
+                                                    "'%#{@params['origin_name_like']}%'", "'%#{@params['destination_name_like']}%'", @params['weight_greater_than'].to_i ], 
+                                  :select => ['origin', 'destination', 'weight'])
     render :action => :show_page
   end
 
-  # POST /Freight/{1}/update
   def update
     @freight = Freight.find(@params['id'])
     @freight.update_attributes(@params['freight'])
     redirect :action => :index
   end
 
-  # POST /Freight/{1}/delete
   def delete
     @freight = Freight.find(@params['id'])
     @freight.destroy
