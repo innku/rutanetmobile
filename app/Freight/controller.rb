@@ -60,9 +60,9 @@ class FreightController < Rho::RhoController
   
   def show_page
     puts "Peso: #{@params['weight_greater_than']}"
-    @freights = Freight.find(:all, :conditions => ["origin LIKE ? AND destination LIKE ? AND CAST(weight AS INT) > ?", 
+    @freights = Freight.find(:all, :conditions => ["origin LIKE ? AND destination LIKE ? AND CAST(weight AS INT) >= ?", 
                                                     "'%#{@params['origin_name_like']}%'", "'%#{@params['destination_name_like']}%'", @params['weight_greater_than'].to_i ], 
-                                  :select => ['origin', 'destination', 'weight'])
+                                  :select => ['origin', 'destination', 'weight', 'category'])
     render :action => :show_page
   end
 
