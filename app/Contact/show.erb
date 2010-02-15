@@ -1,37 +1,26 @@
 <div class="toolbar">
 	<h1 id="pageTitle">
-		<%=@contact.name%> 
+		<%=@contact.first_name%> <%= @contact.last_name %>
 	</h1>
 </div>
 
 <div class="panel" selected="true">
 
-
 <table class="grid">
   
   <tr>
 	<td class="gridleft">Nombre</td>
-    <td class="gridright"><%=@contact.name%></td>
+    <td class="gridright"><%=@contact.first_name%> <%= @contact.last_name %></td>
   </tr>
   
   <tr>
 	<td class="gridleft">Correo</td>
-    <td class="gridright"><%=@contact.mail%></td>
+    <td class="gridright"><%=@contact.email%></td>
   </tr>
   
   <tr>
 	<td class="gridleft">Telefono</td>
     <td class="gridright"><%=@contact.phone%></td>
-  </tr>
-  
-  <tr>
-	<td class="gridleft">Empresa</td>
-    <td class="gridright"><%=@contact.company%></td>
-  </tr>
-  
-  <tr>
-	<td class="gridleft">Ubicacion</td>
-    <td class="gridright"><%=@contact.location%></td>
   </tr>
   
 </table>
