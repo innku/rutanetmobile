@@ -31,7 +31,7 @@ class ContactController < Rho::RhoController
     @contact = Contact.new(@params['contact'])
     @contact.save
     SyncEngine.dosync
-    render :action => :show
+    redirect :action => :show, :id => @contact.id
   end
 
   # POST /Contact/{1}/update
