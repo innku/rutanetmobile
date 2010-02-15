@@ -7,6 +7,16 @@
 <div class="panel" selected="true">
 
 <table class="grid">
+
+  <tr>
+	<td class="gridleft">Object</td>
+    <td class="gridright"><%=@freight.object%></td>
+  </tr>
+
+  <tr>
+	<td class="gridleft">Id</td>
+    <td class="gridright"><%=@freight.id%></td>
+  </tr>
   
   <tr>
 	<td class="gridleft">Origen</td>
@@ -40,9 +50,11 @@
   
 </table>
 
-<div style="position: relative; height: 100px;">
-  <form method="POST" action="<%= url_for(:controller => 'Contact', :action => 'create') %>">
-  	<input type="hidden" name="contact[offer_id]"  value="<%= @freight.object %>" />
-  	<input type="submit" value="Ver datos de contacto" class="blueButton"/>
-  </form>
-</div>
+<% unless @contact %>
+	<div style="position: relative; height: 100px;">
+	  <form method="POST" action="<%= url_for(:controller => 'Contact', :action => 'create') %>">
+	  	<input type="hidden" name="contact[offer_id]"  value="<%= @freight.object %>" />
+	  	<input type="submit" value="Ver datos de contacto" class="blueButton"/>
+	  </form>
+	</div>
+<% end %>

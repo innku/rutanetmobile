@@ -31,7 +31,8 @@ class ContactController < Rho::RhoController
     @contact = Contact.new(@params['contact'])
     @contact.save
     SyncEngine.dosync
-    redirect :action => :show, :id => @contact.id
+    puts "ID DEL CONTACTO #{@contact.id}"
+    WebView.navigate ( url_for :action => :show, :id => @contact.id )
   end
 
   # POST /Contact/{1}/update

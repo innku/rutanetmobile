@@ -16,6 +16,8 @@ class FreightController < Rho::RhoController
 
   def show
     @freight = Freight.find(@params['id'])
+    puts "En el show de freight"
+    @contact = Contact.find(:first, :conditions => ["offer_id = ?", @freight.object.delete("{}")])
     render :action => :show
   end
 
