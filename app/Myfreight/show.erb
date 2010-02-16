@@ -1,0 +1,49 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		<%=@myfreight.category%>
+	</h1>
+</div>
+
+<div class="panel" selected="true">
+
+<table class="grid">
+  <tr>
+	<td class="gridleft">Origen</td>
+    <td class="gridright"><%=@myfreight.origin%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Destino</td>
+    <td class="gridright"><%=@myfreight.destination%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Categoria</td>
+    <td class="gridright"><%=@myfreight.category%></td>
+  </tr>
+  
+  <tr>
+	<td class="gridleft">Fecha de salida</td>
+    <td class="gridright"><%=@myfreight.date_departure%></td>
+  </tr>
+  
+</table>
+
+<table class="grid">
+  <tr>
+	<td class="gridleft">Nombre completo</td>
+    <td class="gridright"><%=@myfreight.name%></td>
+  </tr>
+
+  <tr>
+	<td class="gridleft">Telefono</td>
+    <td class="gridright"><%=@myfreight.phone%></td>
+  </tr>
+
+  <tr>
+	<td class="gridleft">Correo</td>
+    <td class="gridright"><%=@myfreight.email%></td>
+  </tr>
+</table>
+
+</div>

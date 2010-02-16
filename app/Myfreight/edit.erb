@@ -1,0 +1,57 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		Edit <%=@myfreight.origin%>
+	</h1>
+</div>
+
+<form title="Edit Myfreight" 
+	  class="panel" 
+	  id="myfreight_edit_form" 
+	  method="POST" 
+	  action="<%=url_for(:action => :update)%>" selected="true">
+	<fieldset>
+		<input type="hidden" name="id" value="<%=@myfreight.object%>"/>
+		
+		  <div class="row">
+			  <label>Origin: </label>
+			  <input type="text" name="myfreight[origin]" value="<%=@myfreight.origin%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Destination: </label>
+			  <input type="text" name="myfreight[destination]" value="<%=@myfreight.destination%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Category: </label>
+			  <input type="text" name="myfreight[category]" value="<%=@myfreight.category%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Date departure: </label>
+			  <input type="text" name="myfreight[date_departure]" value="<%=@myfreight.date_departure%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Name: </label>
+			  <input type="text" name="myfreight[name]" value="<%=@myfreight.name%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Phone: </label>
+			  <input type="text" name="myfreight[phone]" value="<%=@myfreight.phone%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Email: </label>
+			  <input type="text" name="myfreight[email]" value="<%=@myfreight.email%>"/>
+		  </div>
+		
+	</fieldset>
+	<input type="submit" value="Update"/>
+	<p align="center">
+		<a href="<%=url_for(:action => :delete, :id => @myfreight.object)%>">
+			<font color="#990000">Delete</font>
+		</a>
+	</p>
+</form>
