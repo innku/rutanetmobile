@@ -103,13 +103,17 @@ body[orient="landscape"] > .toolbar > h1 {
 }
 
 #backButton {
-    display: none;
     left: 6px;
     right: auto;
-    padding: 0;
+    float:left;
+    padding: 5px 5px 0 0;
+    color:#fff;
+    font-size:14px;
+    height:23px;
+    text-decoration:none;
     max-width: 55px;
     border-width: 0 8px 0 14px;
-    -webkit-border-image: url(/public/images/backButton.png) 0 8 0 14;
+    -webkit-border-image: url(../images/backButton.png) 0 8 0 14;
 }
 
 .whiteButton,
@@ -354,10 +358,11 @@ body > .toolbar {
 }
 /* now that we don't use back-buttons, we disable ellipsis on long labels */
 .toolbar > h1.category_title {
-  overflow: visible;
   text-align:left;
   font-size:16px;
-  left: 10px;
+  width:200px;
+  text-overflow:ellipsis;
+  left: 100px;
   margin: 1px 0 0 0;
 }
 

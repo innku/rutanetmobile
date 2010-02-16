@@ -1,4 +1,5 @@
 <div class="toolbar">
+	<%= link_to "Carga", url_for("/app/Freight/show?id=#{@contact.offer_id}"), "id=\"backButton\""  %>
 	<h1 id="pageTitle">
 		<%=@contact.first_name%> <%= @contact.last_name %>
 	</h1>

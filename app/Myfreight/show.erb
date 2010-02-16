@@ -1,5 +1,6 @@
 <div class="toolbar">
-	<h1 id="pageTitle">
+	<%= link_to "Cargas", url_for(:action => :index), "id=\"backButton\""  %>
+	<h1 id="pageTitle" class="category_title">
 		<%=@myfreight.category%>
 	</h1>
 </div>
