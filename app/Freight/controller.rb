@@ -26,11 +26,6 @@ class FreightController < Rho::RhoController
     render :action => :new
   end
 
-  def edit
-    @freight = Freight.find(@params['id'])
-    render :action => :edit
-  end
-
   def create
 
   end
@@ -66,17 +61,5 @@ class FreightController < Rho::RhoController
                                                     "'%#{@params['origin_name_like']}%'", "'%#{@params['destination_name_like']}%'", @params['weight_greater_than'].to_i ], 
                                   :select => ['origin', 'destination', 'weight', 'category'])
     render :action => :show_page
-  end
-
-  def update
-    @freight = Freight.find(@params['id'])
-    @freight.update_attributes(@params['freight'])
-    redirect :action => :index
-  end
-
-  def delete
-    @freight = Freight.find(@params['id'])
-    @freight.destroy
-    redirect :action => :index
   end
 end
